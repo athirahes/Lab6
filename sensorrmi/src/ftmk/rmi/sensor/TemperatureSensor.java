@@ -24,9 +24,16 @@ public interface TemperatureSensor extends Remote {
 	 * This method gets current temperature
 	 * 
 	 * @return temperature for a specified day
-	 * 
 	 * @throws RemoteException
 	 */
 	public int getTemperatureByDay() throws RemoteException;
+	
+	/**
+	 * This method gets current temperature
+	 * 
+	 * @return current temperature
+	 * @throws RemoteException
+	 */
+	public float getTemperatureAverage() throws RemoteException;
 
 }

@@ -29,9 +29,15 @@ public class TemperatureClientRMIApp2 {
 			System.out.println("Current temperature in Ayer Keroh is " + currentTemperature + " Celcius");
 
 			// Invoke method from remote object - display temperature for a specified day
+			// (Friday)
 			int temperature = remoteSensorAyerKeroh.getTemperatureByDay();
 
 			System.out.println("Temperature on Friday in Ayer Keroh is " + temperature + " Celcius");
+
+			// Invoke method from remote object - display average temperature in a week
+			float temperatureAverage = remoteSensorAyerKeroh.getTemperatureAverage();
+
+			System.out.println("Weekly average temperature in Ayer Keroh is " + temperatureAverage + " Celcius");
 
 		} catch (RemoteException | NotBoundException e) {
 			// TODO Auto-generated catch block
