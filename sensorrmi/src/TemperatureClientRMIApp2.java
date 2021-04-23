@@ -21,12 +21,17 @@ public class TemperatureClientRMIApp2 {
 			Registry rmiRegistry = LocateRegistry.getRegistry();
 
 			// Look-up for the remote object
-			TemperatureSensor remoteSensorAyerKeroh = (TemperatureSensor) rmiRegistry.lookup("SensorAyerKeroh");
+			TemperatureSensor remoteSensorAyerKeroh = (TemperatureSensor) rmiRegistry.lookup("sensorAyerKeroh");
 
 			// Invoke method from the remote object
 			int currentTemperature = remoteSensorAyerKeroh.getTemperature();
 
 			System.out.println("Current temperature in Ayer Keroh is " + currentTemperature + " Celcius");
+
+			// Invoke method from remote object - display temperature for a specified day
+			int temperature = remoteSensorAyerKeroh.getTemperatureByDay();
+
+			System.out.println("Temperature on Friday in Ayer Keroh is " + temperature + " Celcius");
 
 		} catch (RemoteException | NotBoundException e) {
 			// TODO Auto-generated catch block
