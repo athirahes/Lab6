@@ -45,14 +45,14 @@ public class TemperatureSensorManager extends UnicastRemoteObject implements Tem
 	}
 
 	@Override
-	public int getTemperatureByDay() throws RemoteException {
+	public int getTemperatureByDay(String day) throws RemoteException {
 
 		// Create HasnMap
 		HashMap<String, Integer> temperature = loadDataTemperature();
 
 		// HashMap #2 - Access HashMap elements - use get(key)
 		// key = String day, value = int temperature
-		int temperatureValue = temperature.get("Friday");
+		int temperatureValue = temperature.get(day);
 		return temperatureValue;
 	}
 

@@ -29,8 +29,8 @@ public class TemperatureClientRMIApp2 {
 			System.out.println("Current temperature in Ayer Keroh is " + currentTemperature + " Celcius");
 
 			// Invoke method from remote object - display temperature for a specified day
-			// (Friday)
-			int temperature = remoteSensorAyerKeroh.getTemperatureByDay();
+			String day = "Friday";
+			int temperature = remoteSensorAyerKeroh.getTemperatureByDay(day);
 
 			System.out.println("Temperature on Friday in Ayer Keroh is " + temperature + " Celcius");
 
